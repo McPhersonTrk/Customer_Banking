@@ -1,29 +1,46 @@
 """Import the Account class from the Account.py file."""
 # ADD YOUR CODE HERE
 from Account import Account
-def create_cd_account(balance, interest_rate, months):
-    class Cd_Account(Account):
-        def __init__(self, account_holder, balance, interest_rate, months):
+class Cd_Account(Account):
+    def __init__(self, account_holder, balance, interest_rate, months):
             self.account_holder = account_holder
             self.balance = balance
             self.interest = interest_rate
             self.months = months
             balance = float(int(self.balance))
-        def deposit(self, amount):
+            account_holder = Cd_Account(Account(account_holder=""))
+    def deposit(self, amount):
             self.balance += amount        
             print(f" Deposited ${amount}. New Balance is ${self.balance}")
-        def withdraw(self, amount):
+    def withdraw(self, amount):
             if amount <=self.balance:
                 self.balance -= amount        
                 print(f" Withdrew ${amount}. New Balance is ${self.balance}")
             else:
                 print("Insufficient Funds")
-            account_holder = Cd_Account(Account(account_holder=""))
-        def calculate_interest(self):
+            balance = float(int(self.balance))
+            if self.balance.isdigit:
+                    print(f"Account Balance is {self.balance}, .2f%")
+            else:
+                print("Error, entry must be a whole number. Please try again.")
+            interest_rate = float(int(self.interest))
+            interest_rate = float(int(input("Enter Interest Rate:")) / 100, .2f):
+            if self.interest.isdigit:
+                print(f"Account Ballance is {interest_rate}, .2f%")
+            else:
+                print("Error, entry must be a whole number. Please try again.") 
+    def calculate_interest(self):
             interest_earned = float(int((self.balance * self.interest * self.months) / 100))
             self.balance += interest_earned
             print(f"Interest earned: ${interest_earned}. New balance: ${self.balance}")
             return self.balance, interest_earned
+    def create_cd_account(account_holder, balance, interest_rate, months):
+            cd_account = Cd_Account(account_holder, balance, interest_rate, months)
+            updated_balance, interest_earned = cd_account.calculate_interest()
+            cd_account.set_balance(updated_balance)
+            cd_account.set_interest(interest_earned)
+            return updated_balance, interest_earned
+            
     """Creates a CD account, calculates interest earned, and updates the account balance.
     Args:
         balance (float): The initial CD account balance.
