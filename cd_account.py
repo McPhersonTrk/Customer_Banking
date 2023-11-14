@@ -13,20 +13,20 @@ class Cd_Account(Account):
             self.balance += amount        
             print(f" Deposited ${amount}. New Balance is ${self.balance}")
     def withdraw(self, amount):
-            if amount <=self.balance:
+            if amount <= self.balance:
                 self.balance -= amount        
                 print(f" Withdrew ${amount}. New Balance is ${self.balance}")
             else:
                 print("Insufficient Funds")
             balance = float(int(self.balance))
             if self.balance.isdigit:
-                    print(f"Account Balance is {self.balance}, .2f%")
+                    print(f"Account Balance is ${self.balance}, .2f")
             else:
                 print("Error, entry must be a whole number. Please try again.")
             interest_rate = float(int(self.interest))
             interest_rate = float(int(input("Enter Interest Rate:")) / 100, .2f):
             if self.interest.isdigit:
-                print(f"Account Ballance is {interest_rate}, .2f%")
+                print(f"Account Balance is {interest_rate}, .2f%")
             else:
                 print("Error, entry must be a whole number. Please try again.") 
     def calculate_interest(self):
