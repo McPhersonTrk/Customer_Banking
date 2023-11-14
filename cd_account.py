@@ -1,6 +1,77 @@
 """Import the Account class from the Account.py file."""
 # ADD YOUR CODE HERE
 from Account import Account
+
+# Create an instance of the `Account` class and pass in the balance and interest parameters.
+#  Hint: You need to add the interest as a value, i.e, 0.
+def cd_account(balance: any, interest: any, months: any):
+    cd_account = Account(balance, 0)
+    # Calculate interest earned
+    cd_interest_earned = balance * interest/100 * months/12
+    # Update the CD account balance by adding the interest earned
+    new_cd_balance = balance + cd_interest_earned
+    # Pass the updated_balance to the set balance method using the instance of the CDAccount class.
+    cd_account.set_balance(new_cd_balance)
+    # Pass the interest_earned to the set interest method using the instance of the CDAccount class.
+    cd_account.set_interest(cd_interest_earned)
+    # Return the updated balance and interest earned.
+    return new_cd_balance, cd_interest_earned
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def create_savings_account(balance, interest, months):
+    """Creates a savings account, calculates interest earned, and updates the account balance.
+    Args:
+        balance (float): The initial savings account balance.
+        interest_rate (float): The APR interest rate for the savings account.
+        months (int): The length of months to determine the amount of interest.
+    Returns:
+        float: The updated savings account balance after adding the interest earned.
+        And returns the interest earned.
+    """
+    # Define a function for the Savings Account
+    # Create an instance of the `Account` class and pass in the balance and interest parameters.
+    #  Hint: You need to add the interest as a value, i.e, 0.
+    savings_account = Account(balance, 0)
+    # Calculate interest earned
+    interest_earned = balance * interest/100 * months/12
+    # Update the savings account balance by adding the interest earned
+    new_balance = balance + interest_earned
+    # Pass the updated_balance to the set balance method using the instance of the SavingsAccount class.
+    savings_account.set_balance(new_balance)
+    # Pass the interest_earned to the set interest method using the instance of the SavingsAccount class.
+    savings_account.set_interest(interest_earned)
+    # Return the updated balance and interest earned.
+    return new_balance, interest_earned
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 class Cd_Account(Account):
     def __init__(self, account_holder, balance, interest_rate, months):
             self.account_holder = account_holder
@@ -41,7 +112,7 @@ class Cd_Account(Account):
             cd_account.set_interest(interest_earned)
             return updated_balance, interest_earned
             
-    """Creates a CD account, calculates interest earned, and updates the account balance.
+    Creates a CD account, calculates interest earned, and updates the account balance.
     Args:
         balance (float): The initial CD account balance.
         interest_rate (float): The APR interest rate for the CD account.
@@ -49,7 +120,7 @@ class Cd_Account(Account):
     Returns:
         float: The updated CD account balance after adding the interest earned.
         And returns the interest earned.
-    """
+"""
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
     #  Hint: You need to add the interest as a value, i.e, 0.
     # ADD YOUR CODE HERE
@@ -63,3 +134,4 @@ class Cd_Account(Account):
     # ADD YOUR CODE HERE
     # Return the updated balance and interest earned.
     # ADD YOUR CODE HERE
+"""
